@@ -1,7 +1,10 @@
 const form = document.querySelector('form').addEventListener('submit', (event) => {
 	event.preventDefault();
 
-	const input = document.querySelector('input');
+	const inputMessage = document.querySelector('#message-input');
+	const encryptedInput = btoa(inputMessage.value);
 
-	console.log(input.value);
+	document.querySelector('#link-input').value = encryptedInput;
+	const decryptInput = atob(encryptedInput);
+	console.log(decryptInput);
 });
